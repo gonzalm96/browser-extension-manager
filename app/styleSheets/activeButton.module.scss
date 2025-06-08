@@ -1,0 +1,155 @@
+$accent: #f55950;
+$desc-grey: #6b6f7c;
+
+$grad-start: #050b21;
+$primary: #1f2535;
+$heading-white: #dcdfe8;
+$primary-border: #393f54;
+$secondary-grey: #2d3449;
+
+.slideBtn{
+    display: flex;
+    align-items: center;
+
+    border-radius: 16px;
+    border: 1px solid $grad-start;
+    width: 40px;
+    height: 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: $desc-grey;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &.active{
+        
+        .clickSlider{
+            position: absolute;
+            right: 0;
+            animation: .25s slide-right;
+        }
+    }
+
+    &.inactive{
+        
+        .clickSlider{
+            position: absolute;
+            left: 0;
+            animation: .25s slide-left;
+        }
+    }
+
+    &:focus-visible{
+        outline: solid $accent;
+    }    
+}
+
+@keyframes slide-left {
+    0%{
+        right: 0;
+        left: 20px;
+    }
+
+    100%{
+        right: 20px;
+        left: 0;
+    }
+    
+}
+
+@keyframes slide-right {
+    0%{
+        right: 20px;
+        left: 0;
+    }
+
+    100%{
+        right: 0;
+        left: 20px;
+    }
+}
+
+.sliderBg{
+    position: absolute;
+    background: $accent;
+    height: 18px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+
+
+    &.active{
+        width: 38px;
+        animation: .25s grow-right; 
+    }
+
+    &.inactive{
+        width: 0;
+        animation: .4s shrink-left;
+    }
+}
+
+@keyframes grow-right {
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes shrink-left {
+    0%{
+        width: 100%;
+    }
+
+    100%{
+        width: 0;
+    }
+}
+
+.clickSlider{
+    border-radius: 50%;
+    box-shadow: -1px 0px 20px 3px rgba(0,0,0,0.75);
+    background: $heading-white;
+    height: 96%;
+    width: 46%;
+    margin: auto;
+    z-index: 2;
+}
+
+.filterButton{
+
+    padding: 8px 12px;
+    margin: 0 4px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 16px;
+    border: 1px solid $primary-border;
+
+    @media (max-width: 480px) {
+        flex: 0 1 20%;
+    }
+
+    &.active{
+        background-color: $accent;
+        border: 1px solid $accent;
+        color: $grad-start;
+    }
+
+    &:hover{
+        cursor: pointer;
+        background-color: $primary-border;
+    }
+
+    &:focus-visible{
+        outline: solid $accent;
+    }
+}

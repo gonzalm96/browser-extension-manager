@@ -1,0 +1,17 @@
+$grad-start: #050b21;
+$grad-end: #0a1640;
+$primary: #1f2535;
+
+body {
+    transition: background-color 0.3s ease;
+  }
+
+body.light {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark {
+  background: linear-gradient(180deg, $grad-start 0%, $grad-end 75%);
+  color: #fff;
+}

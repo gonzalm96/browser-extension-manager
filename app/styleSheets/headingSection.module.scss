@@ -1,0 +1,31 @@
+$primary: #1f2535; 
+$desc-grey: #6b6f7c;
+$primary-border: #393f54;
+
+$secondary-grey: #2d3449;
+
+$accent: #f55950;
+
+.content{
+    color: white;
+}
+
+.themeBtn{
+    border: 0;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: $primary-border;
+
+
+    &:hover{
+        cursor: pointer;
+        background-color: $desc-grey;
+    }
+
+    &:focus-visible{
+        outline: solid $accent;
+    }    
+}
