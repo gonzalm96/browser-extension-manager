@@ -3,15 +3,11 @@
 import heading from '../styleSheets/headingSection.module.scss';
 import container from '../styleSheets/containers.module.scss';
 
-import { useState, useContext } from 'react';
-
-import { ThemeContext } from '../themeContext';
+import { useState } from 'react';
 
 import Image from "next/image";
 
 export default function SearchBar(){
-
-    // const { theme, toggleTheme } = useContext(ThemeContext);
 
     const [theme, setTheme] = useState(false);
 

@@ -3,8 +3,6 @@ import "./globals.css";
 
 import containers from "./styleSheets/containers.module.scss"
 
-import { ThemeProvider } from "./themeContext";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,11 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <ThemeProvider> */}
-        <body className={`${geistSans.variable} ${geistMono.variable}` + " " + containers.page}>
-          {children}
-        </body>
-      {/* </ThemeProvider> */}
+      <body className={`${geistSans.variable} ${geistMono.variable}` + " " + containers.page}>
+        {children}
+      </body>    
     </html>
   );
 }
