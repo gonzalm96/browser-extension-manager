@@ -43,7 +43,7 @@ export default function Home() {
     console.log("removing "+key);
     let tempList = extList.filter((item) => item.name != key);
     let tempData = extensionData.filter((item) => item.name != key);
-    setData(tempList);
+    setData(tempData);
     setList(tempList);
   }
 
